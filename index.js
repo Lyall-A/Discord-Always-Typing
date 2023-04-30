@@ -1,9 +1,9 @@
 const config = require(`${__dirname}/config.json`); // Config
 const https = require("https"); // HTTPS module to send typing requests
 if (!config.token) return console.log("No token provided, please get your Discord token and add it to the config.json file next to \"token\"!"); // If token not provided
-if (!config.channel) return console.log("No channel ID provided, please get a channel ID and add it to the config.json file next to \"channel\"!"); // If channel ID(s) not provided
+if (!config.channel) return console.log("No channel ID(s) provided, please get 1 or more channel ID(s) and add it to the config.json file next to \"channel\"! Example: \x1b[100m\"channel\": [\"1234567890123456789\", \"9876543210987654321\"]\x1b[0m"); // If channel ID(s) not provided
 const isArray = typeof config.channel === "object" ? true : false; // Checks if provided channel ID(s) is an array or a string
-if (isArray && !config.channel[0]) return console.log("No channel ID provided, please get a channel ID and add it to the config.json file next to \"channel\"!"); // If channel is array but no channel ID's inside
+if (isArray && !config.channel[0]) return console.log("No channel ID(s) provided, please get 1 or more channel ID(s) and add it to the config.json file next to \"channel\"! Example: \x1b[100m\"channel\": [\"1234567890123456789\", \"9876543210987654321\"]\x1b[0m"); // If channel is array but no channel ID's inside
 
 console.log(`Started! Channel ID: ${isArray ? config.channel.join(", ") : config.channel}`); // Log channel ID(s)
 
