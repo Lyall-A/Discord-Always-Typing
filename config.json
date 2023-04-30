@@ -1,0 +1,6 @@
+{
+  "token": "TOKEN HERE",
+  "channel": "CHANNEL ID",
+  "log": false,
+  "delay": 9000
+}
