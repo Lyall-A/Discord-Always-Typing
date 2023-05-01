@@ -5,7 +5,18 @@ if (!config.channel) return console.log("No channel ID(s) provided, please get 1
 const isArray = typeof config.channel === "object" ? true : false; // Checks if provided channel ID(s) is an array or a string
 if (isArray && !config.channel[0]) return console.log("No channel ID(s) provided, please get 1 or more channel ID(s) and add it to the config.json file next to \"channel\"! Example: \x1b[100m\"channel\": [\"1234567890123456789\", \"9876543210987654321\"]\x1b[0m"); // If channel is array but no channel ID's inside
 
-console.log(`Started! Channel ID: ${isArray ? config.channel.join(", ") : config.channel}`); // Log channel ID(s)
+console.log(`Started! Channel ID${isArray ? config.channel[1] ? "'s" : "" : ""}: ${isArray ? config.channel.join(", ") : config.channel}`); // Log channel ID(s)
+
+process.on("uncaughtException", (err) => {
+    // On rejection
+    console.log(`Error, please make sure you have put your channels in the config.json file!`);
+    console.log(err);
+});
+
+process.on("exit", code => {
+    // On exit
+    console.log(`Exited with code ${code}, up for ${Math.floor(performance.now() / 60000)} minutes`);
+});
 
 (function type(id = isArray ? 0 : null) { // Function to send typing request to channel
     const typing = https.request({ // Send HTTPS request
