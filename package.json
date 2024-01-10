@@ -1,0 +1,22 @@
+{
+  "name": "discord-always-typing",
+  "version": "2.0.1",
+  "description": "A node.js app to make it look like you are typing forever!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lyall-A/Discord-Always-Typing.git"
+  },
+  "keywords": [
+    "discord"
+  ],
+  "author": "Lyall",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lyall-A/Discord-Always-Typing/issues"
+  },
+  "homepage": "https://github.com/Lyall-A/Discord-Always-Typing#readme"
+}
