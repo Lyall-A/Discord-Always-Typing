@@ -2,7 +2,7 @@ const config = require(`${__dirname}/config.json`); // Config
 const https = require("https"); // HTTPS module
 if (!config.token) return console.log("No token provided, please get your Discord token and add it to the config.json file next to \"token\"!"); // If token not provided
 if (!config.channel?.[0]) return console.log("No channel ID(s) provided, please get 1 or more channel ID(s) and add it to the config.json file next to \"channel\"! Example: \x1b[100m\"channel\": [\"1234567890123456789\", \"9876543210987654321\"]\x1b[0m"); // If channel ID(s) not provided
-if (config.channel === "string") config.channel = [config.channel]; // Converts single channel ID string to array
+if (typeof config.channel === "string") config.channel = [config.channel]; // Converts single channel ID string to array
 
 console.log(`Started! Channel ID(s): ${config.channel.join(", ")}`); // Log channel ID(s)
 
