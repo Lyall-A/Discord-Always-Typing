@@ -12,7 +12,7 @@ Open `config.json` file
 
 Replace `YOUR TOKEN HERE` with your bot or user token
 
-Replace `CHANNEL ID` with your... Well channel ID (You can have multiple)
+Replace `CHANNEL ID` with your channel ID (You can have multiple)
 
 Save and run the `start.bat` file
 
@@ -20,8 +20,8 @@ Save and run the `start.bat` file
 
 `token`: User or bot token
 
-`channel`: String with channel ID or Array with channel ID(s)
+`channel`: String or array of channel ID(s)
 
-`timeout`: Time between sending typing requests, default: `9000`. Discord assumes you are no longer typing after 10 seconds
+`timeout`: Delay between sending typing requests in milliseconds, default: `9000`. Discord assumes you are no longer typing after 10 seconds
 
-`log`: true/false value, true if you want to log every time a request has been sent, default: `false`
+`log`: Enable logging, default: `false`
