@@ -6,12 +6,6 @@ if (typeof config.channel === "string") config.channel = [config.channel]; // Co
 
 console.log(`Started! Channel ID(s): ${config.channel.join(", ")}`); // Log channel ID(s)
 
-process.on("uncaughtException", (err) => {
-    // On rejection
-    console.error("Error, please make sure you have put your channels in the config.json file!");
-    console.error(err);
-});
-
 process.on("exit", code => {
     // On exit
     console.log(`Exited with code ${code}, up for ${Math.floor(performance.now() / 60000)} minutes`);
